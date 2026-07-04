@@ -5,7 +5,7 @@ import { useState, useEffect, useCallback } from "react"
 type ConsentStatus = "accepted" | "declined" | "pending"
 
 interface CookiePreferences {
-  necessary: true
+  necessary: boolean
   analytics: boolean
   marketing: boolean
   functional: boolean

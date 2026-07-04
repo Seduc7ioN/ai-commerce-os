@@ -114,24 +114,20 @@ export default function PrivacySettingsPage() {
           <div className="space-y-4">
             <h3 className="text-sm font-medium">Haklarınız</h3>
             <div className="grid gap-3 sm:grid-cols-2">
-              <Button variant="outline" className="justify-start h-auto py-3" asChild>
-                <a href="/kvkk" target="_blank" rel="noopener noreferrer">
-                  <FileText className="mr-2 h-4 w-4 shrink-0" />
-                  <div className="text-left">
-                    <p className="text-sm font-medium">Aydınlatma Metni</p>
-                    <p className="text-xs text-muted-foreground">KVKK bilgilendirme metnini görüntüleyin</p>
-                  </div>
-                </a>
-              </Button>
-              <Button variant="outline" className="justify-start h-auto py-3" asChild>
-                <a href="/kvkk/veri-sahibi" target="_blank" rel="noopener noreferrer">
-                  <FileText className="mr-2 h-4 w-4 shrink-0" />
-                  <div className="text-left">
-                    <p className="text-sm font-medium">Başvuru Formu</p>
-                    <p className="text-xs text-muted-foreground">Veri sahibi başvurusu yapın</p>
-                  </div>
-                </a>
-              </Button>
+              <a href="/kvkk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg border border-border bg-background hover:bg-muted hover:text-foreground px-3 py-3 text-sm font-medium transition-colors">
+                <FileText className="h-4 w-4 shrink-0" />
+                <div className="text-left">
+                  <p className="text-sm font-medium">Aydınlatma Metni</p>
+                  <p className="text-xs text-muted-foreground">KVKK bilgilendirme metnini görüntüleyin</p>
+                </div>
+              </a>
+              <a href="/kvkk/veri-sahibi" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg border border-border bg-background hover:bg-muted hover:text-foreground px-3 py-3 text-sm font-medium transition-colors">
+                <FileText className="h-4 w-4 shrink-0" />
+                <div className="text-left">
+                  <p className="text-sm font-medium">Başvuru Formu</p>
+                  <p className="text-xs text-muted-foreground">Veri sahibi başvurusu yapın</p>
+                </div>
+              </a>
             </div>
           </div>
 
@@ -197,11 +193,11 @@ export default function PrivacySettingsPage() {
             <Switch id="marketing" />
           </div>
           <div className="pt-2">
-            <Button variant="link" size="sm" className="h-auto p-0 text-xs" asChild>
-              <a href="/kvkk/cerez-politikasi" target="_blank" rel="noopener noreferrer">
-                Çerez Politikası&apos;nı görüntüleyin
-              </a>
-            </Button>
+            <Button variant="link" size="sm" className="h-auto p-0 text-xs">
+            <a href="/kvkk/cerez-politikasi" target="_blank" rel="noopener noreferrer">
+              Çerez Politikası&apos;nı görüntüleyin
+            </a>
+          </Button>
           </div>
         </CardContent>
       </Card>
@@ -250,11 +246,9 @@ export default function PrivacySettingsPage() {
             verileriniz kalıcı olarak silinecektir. Bu işlem geri alınamaz.
           </p>
           <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-            <DialogTrigger asChild>
-              <Button variant="destructive">
-                <Trash2 className="mr-2 h-4 w-4" />
-                Hesabımı Sil
-              </Button>
+            <DialogTrigger className="inline-flex items-center justify-center rounded-lg border border-transparent bg-destructive/10 text-destructive hover:bg-destructive/20 h-8 gap-1.5 px-2.5 text-sm font-medium whitespace-nowrap cursor-pointer">
+              <Trash2 className="mr-2 h-4 w-4" />
+              Hesabımı Sil
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
